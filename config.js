@@ -8,20 +8,20 @@ import axios from 'axios';
 import moment from 'moment-timezone';
 
 global.owner = [
-  ['‪212774217717', '☠️ ZORO', true],
-  ['212774217717', ' 3MK 💸', true],
+  ['‪21653794930', 'gojo🤞', true],
+  ['21653794930', ' 3MK 💸', true],
 ];
 
 global.xaxa = 'kana'
-global.suittag = ['212774217717', '212774217717'];
-global.prems = ['212774217717', '212774217717'];
+global.suittag = ['21653794930', '21653794930'];
+global.prems = ['21653794930', '21653794930'];
 
-global.packname = 'MIKEY-BOT ';
-global.author = '★مايكي-كن★';
-global.wm = '★مايكي-كن★';
-global.titulowm = ' مايكي ';
-global.titulowm2 = ` مايكي `
-global.igfg = ' مايكي ';
+global.packname = 'GOJO BOT';
+global.author = 'GOJO SATURO';
+global.wm = 'GOJO SATURO';
+global.titulowm = 'GOJO';
+global.titulowm2 = `GOJO`
+global.igfg = 'GOJO';
 global.wait = '*⌛ _جاري التحميل..._*\n\n*▰▰▰▱▱▱▱▱*';
 
 global.imagen1 = fs.readFileSync('./Menu2.jpg');
@@ -31,7 +31,7 @@ global.imagen4 = fs.readFileSync('./Menu.png');
 global.imagen5 = fs.readFileSync('./src/+18.jpg');
 global.imagen6 = fs.readFileSync('./Menu3.png');
 
-global.mods = ['212774217717'];
+global.mods = ['21653794930'];
 
 //* *******Tiempo***************
 global.d = new Date(new Date + 3600000);
@@ -43,8 +43,8 @@ global.año = d.toLocaleDateString('ar', {year: 'numeric'});
 global.tiempo = d.toLocaleString('en-US', {hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true});
 //* ****************************
 global.wm2 = `▸ ${dia} ${fecha}\n▸ 𝚃𝚑𝚎 𝙼𝚢𝚜𝚝𝚒𝚌 - 𝙱𝚘𝚝`;
-global.gt = '★مايكي★';
-global.mysticbot = '★مايكي★';
+global.gt = 'gojo';
+global.mysticbot = 'gojo';
 global.md = 'https://chat.whatsapp.com/FrMwuvNFNOzGt0BqJmMeWJ';
 global.mysticbot = 'https://chat.whatsapp.com/FrMwuvNFNOzGt0BqJmMeWJ';
 global.waitt = '*⌛ _جاري التحميل..._*\n\n*▰▰▰▱▱▱▱▱*';
