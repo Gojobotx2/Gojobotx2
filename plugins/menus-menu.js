@@ -34,7 +34,7 @@ let rtotalreg = Object.values(global.db.data.users).filter(user => user.register
 let more = String.fromCharCode(8206)
 let readMore = more.repeat(900) 
   const taguser = '@' +  m.sender.split('@s.whatsapp.net')[0];
-let str = `«────── « ⋅ʚᥡᥙᥒᥲ☕︎ɞ⋅ » ──────»
+let str = `«─────── « ⋅ʚᥡᥙᥒᥲ☕︎ɞ⋅ » ───────»
 *│الـــســـلام عـــلـــيـــكـــم👋* ${taguser}
 *│* _*معك يونا للخدمات المميزة😊*_
 *│* ❒ *مستوى:𓆩* ${level}
@@ -43,7 +43,7 @@ let str = `«────── « ⋅ʚᥡᥙᥒᥲ☕︎ɞ⋅ » ────�
 *│* ❒ *الماس:𓆩* ${limit}
 *│* ❒ *نقودك:𓆩* ${money}
 *│* ❒ *الرموز:𓆩* ${joincount}
-*│* ❒ *مميز:𓆩* ${user.premiumTime > 0 ? '✅' : (isPrems ? '✅' : '❌') || ''}
+*│* ❒ *مميز:* ${user.premiumTime > 0 ? '✅' : (isPrems ? '✅' : '❌') || ''}𓆩
 *«─────── «الاوامر الترفيهيه⋅ » ───────»*
 *│❄↫(.سرقه)☄︎*
 *│❄↫(.لستيكر)☄︎*
