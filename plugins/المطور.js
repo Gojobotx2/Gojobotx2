@@ -1,86 +1,23 @@
-import { createHash } from 'crypto'
-import { canLevelUp, xpRange } from '../lib/levelling.js'
-import fetch from 'node-fetch'
-import fs from 'fs'
-const { levelling } = '../lib/levelling.js'
-import moment from 'moment-timezone'
-import { promises } from 'fs'
-import { join } from 'path'
-const time = moment.tz('Egypt').format('HH')
-let wib = moment.tz('Egypt').format('HH:mm:ss')
-//import db from '../lib/database.js'
+const puppeteer = require('puppeteer');
 
-let handler = async (m, {conn, usedPrefix, usedPrefix: _p, __dirname, text, isPrems}) => {
-    let d = new Date(new Date + 3600000)
-    let locale = 'ar'
-    let week = d.toLocaleDateString(locale, { weekday: 'long' })
-    let date = d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' })
-    let _uptime = process.uptime() * 1000
-    let uptime = clockString(_uptime)
-let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
-let videoUrl = 'https://telegra.ph/file/9d56aa21a41402e454de8.mp4';
-  let vn = './media/menu.mp3';
-  const user = global.db.data.users[m.sender];
-  const {money, joincount} = global.db.data.users[m.sender];
-  const {exp, limit, level, role} = 
-    global.db.data.users[m.sender];
-let { min, xp, max } = xpRange(user.level, global.multiplier)
-let username = conn.getName(who)
-let math = max - xp
-let sn = createHash('md5').update(who).digest('hex')
-let totalreg = Object.keys(global.db.data.users).length;
-let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length 
-let more = String.fromCharCode(8206)
-let readMore = more.repeat(900) 
-  const taguser = '@' +  m.sender.split('@s.whatsapp.net')[0];
-let str = ` 
-*༺❁━═══⊱𓆩⛩️𓆪⊰═══━❁༻*
-*☰ مـعـلـومـات الـمـطـور↯°*     
-             
- *_⌬ الـلــقــــــب :_*
-*✮ ⃟🛡️╎:「𝙕𝙊𝙍𝙊」*
- *_⌬ الــــــرقـــم :_*
-*✮ ⃟🛡️╎:「 https://wa.me/+212778558097 」*
+(async () => {
+    const browser = await puppeteer.launch({ headless: false });
+    const page = await browser.newPage();
+    await page.goto('https://web.whatsapp.com/');
 
-*✮ ⃟🛡️╎:「 https://wa.me/+212774217717 」*
- *_⌬ انـســـتـــــا :_*
-*✮ ⃟🛡️╎:「 https://www.instagram.com/tweets._.zahir?igsh=cDRqcWQ5cTc1dDJz 」*
+    // انتظر حتى يتم تحميل صفحة واجهة واتساب
+    await page.waitForSelector('._1awRl');
 
- *༺❁━══⊱𓆩⛩️𓆪⊰═══━❁༻*
-‬`.trim();
-
-conn.sendMessage(m.chat, {
-        video: { url: videoUrl }, caption: str,
-  mentions: [m.sender,global.conn.user.jid],
-  gifPlayback: true,gifAttribution: 0
-    }, { quoted: m });
-}; 
-handler.help = ['main']
-handler.tags = ['group']
-handler.command = ['المطور'] 
-
-export default handler
-function clockString(ms) {
-    let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
-    let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
-    let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-    return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')}
-
-    function ucapan() {
-      const time = moment.tz('Egypt').format('HH')
-      let res = "بداية يوم سعيده ☀️"
-      if (time >= 4) {
-        res = "صباح الخير 🌄"
-      }
-      if (time >= 10) {
-        res = "مساء الخير ☀️"
-      }
-      if (time >= 15) {
-        res = "مساء الخير 🌇"
-      }
-      if (time >= 18) {
-        res = "مساء الخير 🌙"
-      }
-      return res
-      }
+    // استمع للرسائل الواردة واستجابة عند استلام ".المطور"
+    page.on('message', async (msg) => {
+        if (msg === '.المطور') {
+            // إرسال رسالة تحتوي على جهة الاتصال المحددة
+            await page.evaluate((contactNumber) => {
+                const inputField = document.querySelector('.pluggable-input-body');
+                inputField.textContent = contactNumber;
+                const sendButton = document.querySelector('._4sWnG');
+                sendButton.click();
+            }, '21653794930'); // استبدل هنا بالرقم الذي تريد إرساله
+        }
+    });
+})();
