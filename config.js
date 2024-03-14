@@ -8,7 +8,7 @@ import axios from 'axios';
 import moment from 'moment-timezone';
 
 global.owner = [
-  ['‪21653794930', '𝑮𝑶𝑱𝑶 𝑺𝑨𝑻𝑼𝑹𝑶🤞', true],
+  ['‪21653794930', '𝑮𝑶𝑱𝑶 𝑺𝑨𝑻𝑼𝑹𝑶🤞', true]
 ];
 
 global.xaxa = 'kana'
