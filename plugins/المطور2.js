@@ -26,7 +26,7 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
 
 handler.help = ['.المطور'];
 handler.tags = ['infobot'];
-handler.command = ['المطور'];
+handler.command = ['معلومات_المطور'];
 handler.register = false;
 
 export default handler;
