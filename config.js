@@ -8,12 +8,12 @@ import axios from 'axios';
 import moment from 'moment-timezone';
 
 global.owner = [
-  ['‪21653794930', '𝑮𝑶𝑱𝑶 𝑺𝑨𝑻𝑼𝑹𝑶🤞', true]
+  ['‪21696363626', '𝑮𝑶𝑱𝑶 𝑺𝑨𝑻𝑼𝑹𝑶🤞', true]
 ];
 
 global.xaxa = 'kana'
-global.suittag = ['21653794930', '21653794930'];
-global.prems = ['21653794930', '21653794930'];
+global.suittag = ['21696363626', '21696363626'];
+global.prems = ['21696363626', '21696363626'];
 
 global.packname = 'GOJO BOT';
 global.author = 'GOJO SATURO';
@@ -30,7 +30,7 @@ global.imagen4 = fs.readFileSync('./Menu.png');
 global.imagen5 = fs.readFileSync('./src/+18.jpg');
 global.imagen6 = fs.readFileSync('./Menu3.png');
 
-global.mods = ['21653794930'];
+global.mods = ['21696363626'];
 
 //* *******Tiempo***************
 global.d = new Date(new Date + 3600000);
