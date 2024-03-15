@@ -15,7 +15,8 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
         externalAdReply: {
           title: 'ᥡᥙᥒᥲ┇ᑲ᥆𝗍',
           body: "البوت الخاص بمملكة SPACE🚀",
-          sourceUrl: 'https://telegra.ph/file/7116c6426e496c317d83e.jpg',
+          ThumnailUrl:'https://telegra.ph/file/7116c6426e496c317d83e.jpg',
+          sourceUrl: 'https://www.instagram.com/gojosaturo_876?igsh=amxrYmMydTh0NDN3',
           mediaType: 2,
         }
       }
