@@ -1,3 +1,5 @@
+import { createHash } from 'crypto'
+
 const handler = async (m, { conn, usedPrefix: _p }) => {
   try {
     const taguser = '@' +  m.sender.split('@s.whatsapp.net')[0];
