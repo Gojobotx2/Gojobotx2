@@ -32,7 +32,7 @@ ${sortedLevel.slice(0, len).map(({ jid, level }, i) => `*${i + 1}.* ${participan
 `.trim()
   conn.reply(m.chat, text, m, {
     mentions: [...usersExp.slice(0, len), ...usersLim.slice(0, len), ...usersLevel.slice(0, len)].filter(v => !participants.some(p => areJidsSameUser(v, p.id) )) 
-})
+  })
 
 }
 handler.help = ['leaderboard']
@@ -47,12 +47,11 @@ function sort(property, ascending = true) {
 }
 
 function toNumber(property, _default = 0) {
-  if (property) return (a, i, b) => {
+  return (a, i, b) => {
     return {...b[i], [property]: a[property] === undefined ? _default : a[property]}
   }
-  else return a => a === undefined ? _default : a
 }
 
 function enumGetKey(a) {
   return a.jid
-}
+                                                                                                             }
