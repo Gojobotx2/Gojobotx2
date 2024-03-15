@@ -1,7 +1,7 @@
 let handler = async (m, { conn, usedPrefix, command }) => {
   await conn.sendMessage(m.chat, {
    react: {
- text: "⚽",
+ text: "🎬,🎧,🎥,🎞",
  key: m.key,
    }
   })
@@ -9,9 +9,9 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   await conn.sendMessage(m.chat, { video: { url: dir[Math.floor(Math.random() * dir.length)] }, caption: global.veeeee }, { quoted: m })
 }
 
-handler.help = ['ايديت_زو-رو']
+handler.help = ['غوجو']
 handler.tags = ['anime']
-handler.command = /^(editfoot)$/i
+handler.command = /^(ايديت)$/i
 handler.limit = false
 
 export default handler
@@ -28,6 +28,7 @@ const dir = [
 'https://telegra.ph/file/0c4046c6477431bbed40d.mp4',
 'https://telegra.ph/file/d84e53e96fb44ec4cbd23.mp4',
 'https://telegra.ph/file/1286e1bf83c9901308cd8.mp4',
+'https://telegra.ph/file/d06207228975772c72a57.mp4',
 
 
 
