@@ -1,16 +1,28 @@
-let handler = async (m, { conn, text, command, usedPrefix }) => {
-let pp = './src/warn.jpg'
-let who
-if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text
-else who = m.chat
-let user = global.db.data.users[who]
-let bot = global.db.data.settings[conn.user.jid] || {}
-let warntext = `*[❗] اعمل منشن للشخص ال انت تشتي تلغي من عليه انذار*\n\n*—◉ مثال:*\n*${usedPrefix + command} @${global.suittag}*`
-if (!who) throw m.reply(warntext, m.chat, { mentions: conn.parseMention(warntext)}) 
-user.warn -= 1
-await conn.sendButton(m.chat,`${user.warn == 1 ? `*@${who.split`@`[0]}*` : `♻️ *@${who.split`@`[0]}*`} تم الغاء الانذار ✨💜 `, `*الانذارات:*\n⚠️ *قبل: ${user.warn + 1}/3*\n⚠️ *الآن: ${user.warn}/3*\n\n${wm}`, pp, [['📋 قائمة التحذيرات 📋', '#listwarn']], m, { mentions: [who] })}
-handler.command = /^(unwarn|الغاء-الانذار|الغاء الانذار|حذف-الانذار|حذف-التحذير|الغاء-التحذير)$/i
+
+let handler = async (m, { conn, args, groupMetadata}) => {
+        let who
+        if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false
+        else who = m.chat
+        if (!who) throw `✳️ Tag or mention someone`
+        if (!(who in global.db.data.users)) throw `✳️ The user is not found in my database`
+       let warn = global.db.data.users[who].warn
+       if (warn > 0) {
+         global.db.data.users[who].warn -= 1
+         m.reply(`⚠️ *DELWARN*
+         
+▢ Warns: *-1*
+▢ Warns total: *${warn - 1}*`)
+         m.reply(`✳️ An admin lowered their warning, now you have *${warn - 1}*`, who)
+         } else if (warn == 0) {
+            m.reply('✳️ The user has no warning')
+        }
+
+}
+handler.help = ['delwarn @user']
+handler.tags = ['group']
+handler.command = ['delwarn', 'unwarn'] 
 handler.group = true
 handler.admin = true
 handler.botAdmin = true
+
 export default handler
