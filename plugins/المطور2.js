@@ -1,8 +1,8 @@
 import { createHash } from 'crypto'
-let who = m.quoted ? m.quoted.sender : m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 const handler = async (m, { conn, usedPrefix: _p }) => {
   try {
-    const taguser = '@' +  m.sender.split('@s.whatsapp.net')[0];
+    const mentionedUser = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.sender;
+    const taguser = '@' +  mentionedUser.split('@')[0];
     const text = `
 *⚘اهلا و سهلا بك يا 『${taguser}』*
 
@@ -17,7 +17,7 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
         externalAdReply: {
           title: 'ᥡᥙᥒᥲ┇ᑲ᥆𝗍',
           body: "البوت الخاص بمملكة SPACE🚀",
-          thumbnailUrl:'https://telegra.ph/file/7116c6426e496c317d83e.jpg', // تصحيح حجم الصورة واسم الخاصية
+          thumbnailUrl:'https://telegra.ph/file/7116c6426e496c317d83e.jpg',
           sourceUrl: 'https://www.instagram.com/gojosaturo_876?igsh=amxrYmMydTh0NDN3',
           mediaType: 2,
         }
