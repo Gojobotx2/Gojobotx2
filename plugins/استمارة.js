@@ -44,7 +44,7 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
 
 handler.help = ['استمارة'];
 handler.tags = ['infobot'];
-handler.command = ['استمارة','الاستمارة','استماره','الاستماره];
+handler.command = ['استمارة','الاستمارة','استماره','الاستماره'];
 handler.register = false;
 
 export default handler;
