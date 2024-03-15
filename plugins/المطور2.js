@@ -1,9 +1,7 @@
-const { MessageType } = require('@adiwajshing/baileys');
-
 const handler = async (m, { conn, usedPrefix: _p }) => {
   try {
-    const taguser = "taguser";
-    const caption = `
+    let taguser = "user"
+    const text = `
 *⚘اهلا و سهلا بك يا 『${taguser}』*
 
 *↯رقم المطور:『 https://wa.me/message/RYOUR2E5SRFOL1 』*
@@ -11,22 +9,26 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
 *↯انستا المطور:『 https://www.instagram.com/gojosaturo_876?igsh=amxrYmMydTh0NDN3 』*
 `.trim();
 
-    // إضافة رابط الصورة كصورة مرفقة مع الرسالة
-    const messageOptions = {
-      quotedImage: 'https://telegra.ph/file/f416b40e7f5e312d80edb.jpg'
-    };
-
-    // إرسال الرسالة مع الصورة المرفقة
-    await conn.sendMessage(m.chat, caption, MessageType.text, messageOptions);
-
-  } catch (error) {
-    console.error(error);
+    conn.sendMessage(m.chat, {
+      text,
+      contextInfo: {
+        externalAdReply: {
+          title: 'ᥡᥙᥒᥲ┇ᑲ᥆𝗍',
+          body: "البوت الخاص بمملكة SPACE🚀",
+          sourceUrl: 'https://www.instagram.com/gojosaturo_876?igsh=amxrYmMydTh0NDN3',
+          mediaType: 1,
+        }
+      }
+    }, { quoted: m });
+  } catch (e) {
+    conn.reply(m.chat, '❎ هناك خطأ في لائحة الاوامر', m);
+    throw e;
   }
 };
 
-handler.help = ['.المطور'];
+handler.help = ['استمارة'];
 handler.tags = ['infobot'];
-handler.command = ['معلومات_المطور'];
+handler.command = ['معلومات_المطور','المطور'];
 handler.register = false;
 
 export default handler;
