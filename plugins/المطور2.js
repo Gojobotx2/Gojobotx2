@@ -10,7 +10,14 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
 
 *↯انستا المطور:『 https://www.instagram.com/gojosaturo_876?igsh=amxrYmMydTh0NDN3 』*
 `.trim();
-    thumbnailUrl:'https://telegra.ph/file/f416b40e7f5e312d80edb.jpg';
+
+    // إضافة رابط الصورة كصورة مرفقة مع الرسالة
+    const messageOptions = {
+      quotedImage: 'https://telegra.ph/file/f416b40e7f5e312d80edb.jpg'
+    };
+
+    // إرسال الرسالة مع الصورة المرفقة
+    await conn.sendMessage(m.chat, caption, MessageType.text, messageOptions);
 
   } catch (error) {
     console.error(error);
