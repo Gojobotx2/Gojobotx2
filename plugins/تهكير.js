@@ -31,7 +31,7 @@ const handler = async (m, { conn, command, text }) => {
   const response =
     `━━━━━━━⬣ *👾* ⬣━━━━━━━\n` +
     `*تم اختراقك بنجاح*✅, ${text}   ${loveDescription}   *تم اخطراقك بواسطة 1001 CODER ملفاتك وبياناتك عند شات المطور*\n\n` +
-    `*❥ ITACHI Bot*\n` +
+    `*ᥡᥙᥒᥲ☕︎*\n` +
     `━━━━━━━⬣ *👾* ⬣━━━━━━━`    
   
   async function loading() {
