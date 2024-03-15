@@ -15,8 +15,8 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
         externalAdReply: {
           title: 'ᥡᥙᥒᥲ┇ᑲ᥆𝗍',
           body: "البوت الخاص بمملكة SPACE🚀",
-          sourceUrl: 'https://www.instagram.com/gojosaturo_876?igsh=amxrYmMydTh0NDN3',
-          mediaType: 1,
+          sourceUrl: 'https://telegra.ph/file/7116c6426e496c317d83e.jpg',
+          mediaType: 2,
         }
       }
     }, { quoted: m });
@@ -28,7 +28,7 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
 
 handler.help = ['استمارة'];
 handler.tags = ['infobot'];
-handler.command = ['معلومات_المطور','المطور'];
+handler.command = ['معلومات_المطور'];
 handler.register = false;
 
 export default handler;
