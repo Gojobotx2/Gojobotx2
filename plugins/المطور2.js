@@ -2,7 +2,7 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
   try {
     let taguser = m.mentionedJid[0] || m.sender;
     const text = `
-*⚘اهلا و سهلا بك يا 『${taguser.replace('@c.us', '')}』*
+*⚘اهلا و سهلا بك يا 『${taguser}』*
 
 *↯رقم المطور:『 https://wa.me/message/RYOUR2E5SRFOL1 』*
 
