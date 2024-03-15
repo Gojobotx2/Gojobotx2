@@ -1,6 +1,6 @@
 const handler = async (m, { conn, usedPrefix: _p }) => {
   try {
-    let taguser = "user"
+    let taguser = m.mentionedJid[0] || "user"; // تصحيح المنشن
     const text = `
 *⚘اهلا و سهلا بك يا 『${taguser}』*
 
@@ -15,7 +15,7 @@ const handler = async (m, { conn, usedPrefix: _p }) => {
         externalAdReply: {
           title: 'ᥡᥙᥒᥲ┇ᑲ᥆𝗍',
           body: "البوت الخاص بمملكة SPACE🚀",
-          ThumnailUrl:'https://telegra.ph/file/7116c6426e496c317d83e.jpg',
+          thumbnailUrl:'https://telegra.ph/file/7116c6426e496c317d83e.jpg', // تصحيح حجم الصورة واسم الخاصية
           sourceUrl: 'https://www.instagram.com/gojosaturo_876?igsh=amxrYmMydTh0NDN3',
           mediaType: 2,
         }
