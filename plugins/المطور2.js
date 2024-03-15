@@ -1,6 +1,6 @@
 const handler = async (m, { conn, usedPrefix: _p }) => {
   try {
-    let taguser = m.mentionedJid[0] || m.sender;
+    const taguser = '@' +  m.sender.split('@s.whatsapp.net')[0];
     const text = `
 *⚘اهلا و سهلا بك يا 『${taguser}』*
 
