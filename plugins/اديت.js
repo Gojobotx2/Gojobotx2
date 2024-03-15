@@ -1,9 +1,9 @@
 let handler = async (m, { conn, usedPrefix, command }) => {
   await conn.sendMessage(m.chat, {
-    react: [
-      "🎬", "🎧", "🎥", "🎞"
-    ],
+    react: {
+      text: "🎬",
     key: m.key,
+    },
   });
 
   await conn.sendMessage(m.chat, { video: { url: dir[Math.floor(Math.random() * dir.length)] }, caption: global.veeeee }, { quoted: m });
